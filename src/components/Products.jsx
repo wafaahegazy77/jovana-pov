@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import logo from "../img/logo.png";
 
 export default function Products({ products, addToCart }) {
   const [search, setSearch] = useState("");
@@ -10,11 +11,16 @@ export default function Products({ products, addToCart }) {
 
   return (
     <div>
-      <input
-        placeholder="بحث..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <div className="top_nav">
+          <img src={logo} alt="" className="logo" />
+          <input
+            className="form-contorol"
+            placeholder="بحث عن منتج..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+
+      </div>
 
       <div className="grid">
         {filtered.map(p => (

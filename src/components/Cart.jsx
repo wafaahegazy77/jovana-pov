@@ -11,24 +11,31 @@ export default function Cart({
   return (
     <div className="cart">
       <h2>السلة</h2>
+      <div className="cart_box">
+        {cart.map(item => (
+          <div key={item.id} className="cart-item">
+            <span className="name">{item.name}</span>
 
-      {cart.map(item => (
-        <div key={item.id} className="cart-item">
-          <span>{item.name}</span>
+            <div className="act_btuns">
+              <button onClick={() => updateQty(item.id, "dec")}>-</button>
+              <span>{item.qty}</span>
+              <button onClick={() => updateQty(item.id, "inc")}>+</button>
+            </div>
 
-          <div>
-            <button onClick={() => updateQty(item.id, "dec")}>-</button>
-            <span>{item.qty}</span>
-            <button onClick={() => updateQty(item.id, "inc")}>+</button>
+            <span>{item.price * item.qty} <small> ر.س  </small> </span>
+
+            <button className="removerButn" onClick={() => removeItem(item.id)}>x</button>
           </div>
+        ))}
 
-          <span>{item.price * item.qty}</span>
-
-          <button onClick={() => removeItem(item.id)}>x</button>
+        <div className="cart_box_foot">
+          <h3> اجمالي الفاتورة: {total} ر.س</h3>
+          <button onClick={clearCart}>مسح السلة</button>
         </div>
-      ))}
+      </div>
 
       <div className="payment">
+        <span> <b> اختر طريقة الدفع  : </b> </span>
         <label>
           <input
             type="radio"
@@ -48,9 +55,8 @@ export default function Cart({
         </label>
       </div>
 
-      <h3>الإجمالي: {total} ر.س</h3>
-
-      <button onClick={clearCart}>مسح السلة</button>
+      
+      
     </div>
   );
 }

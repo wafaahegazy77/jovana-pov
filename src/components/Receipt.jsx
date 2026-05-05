@@ -86,7 +86,7 @@ export default function Receipt({ cart, total, invoiceId, paymentMethod }) {
 
       <div className="center">شكراً لزيارتكم ❤️</div>
 
-      <div className="no-print">
+      <div className="print_butns no-print">
         <button onClick={printClient}>طباعة للعميل</button>
         <button onClick={printKitchen}>طباعة للمطبخ</button>
       </div>
