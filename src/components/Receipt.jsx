@@ -9,12 +9,16 @@ export default function Receipt({ cart, total, invoiceId, paymentMethod }) {
 
   const printClient = () => {
     setMode("client");
-    setTimeout(() => window.print(), 100);
+    setTimeout(() => {
+      window.print();
+    }, 200);
   };
 
   const printKitchen = () => {
     setMode("kitchen");
-    setTimeout(() => window.print(), 100);
+    setTimeout(() => {
+      window.print();
+    }, 200);
   };
 
   return (
@@ -37,7 +41,7 @@ export default function Receipt({ cart, total, invoiceId, paymentMethod }) {
 
       <div className="row-between">
         <span>رقم الفاتورة</span>
-        <span>{invoiceId}</span>
+        <span>{invoiceId || "-"}</span>
       </div>
 
       <div className="row-between">
@@ -84,7 +88,7 @@ export default function Receipt({ cart, total, invoiceId, paymentMethod }) {
 
       <hr />
 
-      <div className="center">شكراً لزيارتكم ❤️</div>
+      <div className="center"> مطعم جوفانا   ❤️</div>
 
       <div className="print_butns no-print">
         <button onClick={printClient}>طباعة للعميل</button>

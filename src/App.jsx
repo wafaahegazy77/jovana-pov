@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { products } from "./data/products";
 import Products from "./components/Products";
@@ -10,13 +9,17 @@ import { generateInvoiceId } from "./utils/helpers";
 export default function App() {
   const [cart, setCart] = useState([]);
   const [paymentMethod, setPaymentMethod] = useState("cash");
-  const [invoiceId, setInvoiceId] = useState(generateInvoiceId());
+  const [invoiceId, setInvoiceId] = useState(null);
 
   useEffect(() => setCart(loadCart()), []);
   useEffect(() => saveCart(cart), [cart]);
 
   const addToCart = (p) => {
     setCart(prev => {
+      if (prev.length === 0) {
+        setInvoiceId(generateInvoiceId());
+      }
+
       const ex = prev.find(i => i.id === p.id);
       if (ex) return prev.map(i => i.id === p.id ? { ...i, qty: i.qty + 1 } : i);
       return [...prev, { ...p, qty: 1 }];
@@ -25,9 +28,11 @@ export default function App() {
 
   const updateQty = (id, t) => {
     setCart(prev =>
-      prev.map(i =>
-        i.id === id ? { ...i, qty: t === "inc" ? i.qty + 1 : i.qty - 1 } : i
-      ).filter(i => i.qty > 0)
+      prev
+        .map(i =>
+          i.id === id ? { ...i, qty: t === "inc" ? i.qty + 1 : i.qty - 1 } : i
+        )
+        .filter(i => i.qty > 0)
     );
   };
 
@@ -35,7 +40,7 @@ export default function App() {
 
   const clearCart = () => {
     setCart([]);
-    setInvoiceId(generateInvoiceId());
+    setInvoiceId(null);
   };
 
   const total = cart.reduce((a, i) => a + i.price * i.qty, 0);
