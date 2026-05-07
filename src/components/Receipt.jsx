@@ -29,7 +29,6 @@ export default function Receipt({ cart, total, invoiceId, paymentMethod }) {
         <div>  ينبع - حي الصريف <br/> شارع عمر بن عبد العزيز  </div>
         <div>TEL  : +966507444114</div>
         <div>VAT No    : 311404588400003</div>
-        <div> TIN    : 311404588400003 </div>
         <div> LIC No    : 7032640521 </div>
       </div>
 
