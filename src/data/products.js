@@ -8,9 +8,10 @@ export const products = [
   { id: 6, name: "كرسبي تشيكن شيتوس", price: 39 },
   { id: 7, name: "تشكن بافلو بايت", price: 37 },
   { id: 8, name: "شريمب داينمت", price: 38 },
-  { id: 9, name: "بيبسي ", price: 4 },
-  { id: 10, name: "ميراندا برتقال", price: 4 },
-  { id: 11, name: "سفن", price: 4 },
-  { id: 12, name: "ديو", price: 4 },
-  { id: 13, name: "مياه", price: 2 }
+  { id: 9, name: "بطاطس سادة  ", price: 9 },
+  { id: 10, name: "بيبسي ", price: 4 },
+  { id: 11, name: "ميراندا برتقال", price: 4 },
+  { id: 12, name: "سفن", price: 4 },
+  { id: 13, name: "ديو", price: 4 },
+  { id: 14, name: "مياه", price: 2 },
 ];
