@@ -112,7 +112,7 @@ body {
   font-weight: bold;
 }
 
-@media print {
+/* @media print {
   body * {
     visibility: hidden;
   }
@@ -136,6 +136,44 @@ body {
 
   .no-print {
     display: none !important;
+  }
+} */
+@media print {
+
+  html,
+  body {
+    width: 80mm;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #receipt,
+  #receipt * {
+    visibility: visible;
+  }
+
+  #receipt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  @page {
+    size: 80mm auto;
+    margin: 0;
   }
 }
 
