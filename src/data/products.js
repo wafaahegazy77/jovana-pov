@@ -11,8 +11,9 @@ export const products = [
   { id: 9, name: "بطاطس سادة  ", price: 9 },
   { id: 10, name: "بطاطس صوصات  ", price: 10 },
   { id: 11, name: "بيبسي ", price: 4 },
-  { id: 12, name: "ميراندا برتقال", price: 4 },
-  { id: 13, name: "سفن", price: 4 },
-  { id: 14, name: "ديو", price: 4 },
-  { id: 15, name: "مياه", price: 2 },
+  { id: 12, name: "بيبسي دايت", price: 4 },
+  { id: 13, name: "ميراندا برتقال", price: 4 },
+  { id: 14, name: "سفن", price: 4 },
+  { id: 15, name: "ديو", price: 4 },
+  { id: 16, name: "مياه", price: 2 },
 ];
