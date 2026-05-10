@@ -150,6 +150,7 @@ body {
 
   body * {
     visibility: hidden;
+    font-size: 13px;
   }
 
   #receipt,
